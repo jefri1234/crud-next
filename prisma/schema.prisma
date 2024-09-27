@@ -1,0 +1,20 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  //vamos estar generando codigo para javacrip😎😀
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url = env("DATABASE_URL") // uses connection pooling
+  //directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
+
+model Task{
+  id Int @id @default(autoincrement())//@id= identificador unico
+  title String
+  description String? //? no es requerido
+  createdAt DateTime @default(now())
+}
