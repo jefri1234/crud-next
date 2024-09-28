@@ -14,6 +14,7 @@ async function HomePage() {
   const tasks= await loadTask();
   
   return <section className=" container mx-auto">
+    <h1 className="text-3xl font-bold text-gray-300 text-center pt-3">ALL TASKS HERE</h1>
   <div className=" grid grid-cols-3 gap-3">
     {
     tasks.map((task)=>(
