@@ -18,7 +18,7 @@ function TaskEdit({ params }) {
         setTitle(data.data.title)
         setDescription(data.data.description)
         });
-  }, []);
+  }, [params.id]);
  
 
  //-------------------------------------------------------------------------------------------

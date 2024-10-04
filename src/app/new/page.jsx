@@ -18,7 +18,7 @@ function NewPage() {
       setDescription(data.datosobtenidos.description || "")
       console.log(title)
     });
-  },[]);
+  },[title]);
 
 
  //-------------------------------------------------------------------------------------------
