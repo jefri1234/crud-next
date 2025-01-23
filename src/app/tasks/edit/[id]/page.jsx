@@ -1,6 +1,7 @@
 "use client"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react";
+import Link from "next/link"
 //import handleForm from "./handleForm"//de este archivo importamos esa funcion o componente
 
 //params es un objeto
@@ -91,15 +92,12 @@ function TaskEdit({ params }) {
         ></textarea>
         <div className=" flex justify-between">
         <button type="submit" className=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md">Actualizar</button>
-        
+        <Link  href="/" className=" bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-md">Regresar</Link>        
         <button type="button" className=" bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-md"
           onClick={async()=>{
               const res=await fetch('/api/tasks/'+params.id,{
                   method:"DELETE"
               })
-
-            
-              
               const data= res.json()
               console.log({
                   "message":"task eliminado",

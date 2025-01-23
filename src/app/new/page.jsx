@@ -1,6 +1,7 @@
 "use client"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react";
+import Link from "next/link";
 //import handleForm from "./handleForm"//de este archivo importamos esa funcion o componente
 
 function NewPage() {
@@ -9,7 +10,6 @@ function NewPage() {
   const router = useRouter()
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-
   //-------------------------------------------------------------------------------------------
 
   //funcion para guardar los datos a la base de datos mediante el formulario
@@ -38,6 +38,7 @@ function NewPage() {
     console.log(data)
     //una ves creado o realizado que se debio hacer redireccion a inicio
     router.push("/")
+    router.refresh()
   }
   console.log("valor del estado", title)
   //..................................................................................................
@@ -66,6 +67,7 @@ function NewPage() {
           placeholder="titulo"
           // capturando el valor con la funcion setTitle del UseState
           onChange={(e) => setTitle(e.target.value)}
+          autoFocus
         />
 
         <label htmlFor="description" className="font-bold text-sm">
@@ -79,9 +81,12 @@ function NewPage() {
           // capturando el valor con la funcion setDescription del UseState
           onChange={(e) => setDescription(e.target.value)}
         ></textarea>
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md">
+       <div className="flex justify-around items-center">
+       <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md">
           crear
         </button>
+        <Link href="/" className=" bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg  ">Regresar</Link>
+       </div>
       </form>
     </div>
 

@@ -4,10 +4,12 @@ function NavBar() {
     return (
         <nav className=" bg-slate-900 ">
             <div className=" container mx-auto flex justify-around items-center py-3">
-                <h3 className=" font-bold text-3xl">PANEL </h3>
+                <Link href='/' className=" text-slate-400 hover:text-slate-300">
+                    <h3 className=" font-bold text-3xl">PANEL </h3>
+                </Link>
                 <ul className=" flex justify-between gap-3 font-bold">
                     <li>
-                        <Link href='/' className=" text-slate-400 hover:text-slate-300">Task</Link>
+                        <Link href='/' className=" text-slate-400 hover:text-slate-300">Tasks</Link>
                     </li>
                     <li>
                         <Link href='/new' className=" text-slate-400 hover:text-slate-300">New</Link>
